@@ -1,3 +1,4 @@
+import veicolo
 class Moto(Veicolo):
     def __init__(self, targa : str):
         self.__maxPasseggeri = 0

@@ -1,7 +1,7 @@
 
 marca = ["volkswagen","audi","bmw","mercedes","fiat","dacia","ferrari","lamborghini","pagani"]
 colori = ["nero","giallo","rosso","verde","arancione","viola","bianca","grigia","blu","marrone"]
-class veicolo:
+class Veicolo:
     def __init__(self,marca:str, modello:str, colore:str, cilindrata:int,alimentazione:str, targa:str):
         self.__marca = marca
         self.__modello = modello

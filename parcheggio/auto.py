@@ -1,4 +1,5 @@
-class Auto(Livello0):
+import veicolo
+class Auto(Veicolo):
     def __init__(self, targa : str):
         self.__maxPasseggeri = 0
         self.__passeggeri = 0
