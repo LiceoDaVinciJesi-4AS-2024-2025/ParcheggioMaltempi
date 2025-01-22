@@ -1,6 +1,9 @@
-import veicolo
-class Auto(Veicolo):
+
+import veicolo 
+
+class Auto(veicolo.Veicolo):
     def __init__(self, targa : str):
+        super().__init__(targa)
         self.__maxPasseggeri = 0
         self.__passeggeri = 0
         self.__merce = 0
@@ -12,7 +15,7 @@ class Auto(Veicolo):
     
     @maxPasseggeri.setter
     def maxPasseggeri(self,value: int ):
-        if value < 1 and value > 8:
+        if value < 1 and value > 9:
             raise ValueError("Troppi posti")
         self.__maxPasseggeri = value
         return
@@ -33,8 +36,8 @@ class Auto(Veicolo):
     
     @maxMerce.setter
     def maxMerce(self,value: int ):
-        if value < 0 and value >3500:
-            raise ValueError("Troppi tanti o pochi chili")
+        if value < 0 and value > 1500:
+            raise ValueError("Troppi o pochi chili")
         self.__maxMerce = value
         return
     
@@ -45,8 +48,23 @@ class Auto(Veicolo):
     @merce.setter
     def merce(self,value):
         if value < 0 and value > self.__MaxMerce:
-            raise ValueError("Numero di kg di merce impossibile")
+            raise ValueError("non puo trasportare così tanta merce")
         self.__merce = value
         
     def __str__(self):
-        return "Auto: ", + str(self.__dict__)
+        return "Auto: " + str(self.__dict__)
+
+
+
+if __name__ == "__main__":
+    auto = Auto("HA 324 ZR")
+    auto.marca = "BMW"
+    auto.modello = "coupè"
+    auto.colore = "nero"
+    auto.cilindrata = 4395
+    auto.alimentazione = "benzina"
+    auto.maxPasseggeri = 5
+    auto.passeggeri = 2
+    auto.maxMerce = 600
+    auto.merce = 120
+    print(auto)

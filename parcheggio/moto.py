@@ -1,6 +1,8 @@
 import veicolo
-class Moto(Veicolo):
+
+class Moto(veicolo.Veicolo):
     def __init__(self, targa : str):
+        super().__init__(targa)
         self.__maxPasseggeri = 0
         self.__passeggeri = 0
         self.__merce = 0
@@ -12,8 +14,8 @@ class Moto(Veicolo):
     
     @maxPasseggeri.setter
     def maxPasseggeri(self,value: int ):
-        if value < 1 and value > 2:
-            raise ValueError("Troppi posti")
+        if value != 2:
+            raise ValueError("massimo 2 passeggero")
         self.__maxPasseggeri = value
         return
     
@@ -33,7 +35,7 @@ class Moto(Veicolo):
     
     @maxMerce.setter
     def maxMerce(self,value: int ):
-        if value < 0 and value > 50:
+        if value < 0 and value > 100:
             raise ValueError("Troppi tanti o pochi chili")
         self.__maxMerce = value
         return
@@ -49,3 +51,15 @@ class Moto(Veicolo):
         self.__merce = value
     def __str__(self):
         return "Moto: " + str(self.__dict__)
+if __name__ == "__main__":
+    moto = Moto("FJ 555 JK")
+    moto.marca = "ktm"
+    moto.modello = "strada"
+    moto.colore = "arancione"
+    moto.cilindrata = 1250
+    moto.alimentazione = "benzina"
+    moto.maxPasseggeri = 2
+    moto.passeggeri = 1
+    moto.maxMerce = 800
+    moto.merce = 60
+    print(moto)
