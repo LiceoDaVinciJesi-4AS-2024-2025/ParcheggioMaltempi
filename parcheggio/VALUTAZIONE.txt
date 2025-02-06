@@ -1,0 +1,4 @@
+Solo 7 commit per 3 settimane di lavoro.
+Mancato una settimana, ok. Però sviluppato il progetto troppo poco.
+
+VOTO: 6
